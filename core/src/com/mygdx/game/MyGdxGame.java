@@ -17,6 +17,7 @@ public class MyGdxGame extends Game {
 	//private OrthographicCamera camera;
 	public SpriteBatch batch;
 	public BitmapFont font;
+
 	//Texture img;
 	//Rectangle playBounds;
 	//Texture bomberman;

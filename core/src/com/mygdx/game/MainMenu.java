@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -11,9 +12,11 @@ import com.badlogic.gdx.math.Vector3;
 /**
  * Created by jedre on 15.01.2017.
  */
-public class MainMenu implements Screen{
+public class MainMenu extends ScreenAdapter{
 
-    final MyGdxGame game;
+
+
+    MyGdxGame game;
 
     Texture img;
     Rectangle playBounds;
@@ -26,7 +29,7 @@ public class MainMenu implements Screen{
         this.game = game;
 
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, 800, 480);
+        camera.setToOrtho(false, 640, 640);
 
 
         img = new Texture("main.jpg");
@@ -48,14 +51,11 @@ public class MainMenu implements Screen{
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
-        game.font.draw(game.batch, "Tap anywhere to begin!", 350, 100);
+        game.font.draw(game.batch, "Tap anywhere to begin!", 250, 250);
         game.batch.end();
-/*
         if (Gdx.input.isTouched()) {
             game.setScreen(new GameScreen(game));
-            dispose();
         }
-  */
     }
 
     @Override
